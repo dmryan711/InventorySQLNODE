@@ -138,7 +138,7 @@ function purchaseAmount(itemId,amountInt){
     connection.query("SELECT price FROM products WHERE item_id = "+itemId+";", function(err, res){
         if(err) throw err;
         var purchaseTotal = res[0].price * amountInt;
-        console.log(chalk.green("Your total amount is $"+purchaseTotal));
+        console.log(chalk.green("Your total amount is $"+purchaseTotal.toFixed(2)));
         connection.end();
       });
 }
